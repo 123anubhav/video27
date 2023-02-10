@@ -131,54 +131,54 @@ Your browser does not support the video tag.
 		}
 		requestAnimationFrame(scrollVideo);  
 	}
-	requestAnimationFrame(scrollVideo);
-    document.addEventListener("touchmove", function(event) {
-        if (event.touches[0].clientY > window.innerHeight / 2) {
-        //  video.playbackRate += 0.25;   // Orignal
-          video.playbackRate += 0.30;
-        } else {  
-         // video.playbackRate -= 0.25;  // Original    
-          video.playbackRate -= 0.30;
-        }
-      });   
+	// requestAnimationFrame(scrollVideo);
+    // document.addEventListener("touchmove", function(event) {
+    //     if (event.touches[0].clientY > window.innerHeight / 2) {
+    //     //  video.playbackRate += 0.25;   // Orignal
+    //       video.playbackRate += 0.30;
+    //     } else {  
+    //      // video.playbackRate -= 0.25;  // Original    
+    //       video.playbackRate -= 0.30;
+    //     }
+    //   });   
 }
 
-// const videoContainer = document.querySelector('#videoContainer');
-// const video = document.querySelector('#video');
+const videoContainer = document.querySelector('#videoContainer');
+const video = document.querySelector('#video');
 
-// videoContainer.addEventListener('touchstart', handleTouchStart, false);
-// videoContainer.addEventListener('touchmove', handleTouchMove, false);
+videoContainer.addEventListener('touchstart', handleTouchStart, false);
+videoContainer.addEventListener('touchmove', handleTouchMove, false);
 
-// let xDown = null;
-// let yDown = null;
+let xDown = null;
+let yDown = null;
 
-// function handleTouchStart(evt) {
-//   xDown = evt.touches[0].clientX;
-//   yDown = evt.touches[0].clientY;
-// }
+function handleTouchStart(evt) {
+  xDown = evt.touches[0].clientX;
+  yDown = evt.touches[0].clientY;
+}
 
-// function handleTouchMove(evt) {
-//   if (!xDown || !yDown) {
-//     return;
-//   }
+function handleTouchMove(evt) {
+  if (!xDown || !yDown) {
+    return;
+  }
 
-//   const xUp = evt.touches[0].clientX;
-//   const yUp = evt.touches[0].clientY;
+  const xUp = evt.touches[0].clientX;
+  const yUp = evt.touches[0].clientY;
 
-//   const xDiff = xDown - xUp;
-//   const yDiff = yDown - yUp;
+  const xDiff = xDown - xUp;
+  const yDiff = yDown - yUp;
 
-//   if (Math.abs(xDiff) > Math.abs(yDiff)) {
-//     if (xDiff > 0) {
-//       video.currentTime -= 0.1;
-//     } else {
-//       video.currentTime += 0.1;
-//     }
-//   }
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      video.currentTime -= 0.1;
+    } else {
+      video.currentTime += 0.1;
+    }
+  }
 
-//   xDown = null;
-//   yDown = null;
-// }
+  xDown = null;
+  yDown = null;
+}
 
  
 // registerVideo("#bound-one", "#bound-one video");
