@@ -131,16 +131,16 @@ Your browser does not support the video tag.
 		}
 		requestAnimationFrame(scrollVideo);  
 	}
-	// requestAnimationFrame(scrollVideo);
-    // document.addEventListener("touchmove", function(event) {
-    //     if (event.touches[0].clientY > window.innerHeight / 2) {
-    //     //  video.playbackRate += 0.25;   // Orignal
-    //       video.playbackRate += 0.30;
-    //     } else {  
-    //      // video.playbackRate -= 0.25;  // Original    
-    //       video.playbackRate -= 0.30;
-    //     }
-    //   });   
+	requestAnimationFrame(scrollVideo);
+    document.addEventListener("touchmove", function(event) {
+        if (event.touches[0].clientY > window.innerHeight / 2) {
+        //  video.playbackRate += 0.25;   // Orignal
+          video.playbackRate += 0.30;
+        } else {  
+         // video.playbackRate -= 0.25;  // Original    
+          video.playbackRate -= 0.30;
+        }
+      });   
 }
 
 const videoContainer = document.querySelector('#videoContainer');
